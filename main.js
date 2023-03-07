@@ -63,23 +63,22 @@ postsList.addEventListener('click', (event) => {
 
     btnSubmit.addEventListener('click', (event) => {
         event.preventDefault();
-        console.log('foi!')
         fetch(`${url}/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                title: titleValue,
-                body: bodyValue,
+                title: titleValue.value,
+                body: bodyValue.value,
             })
         })
         .then(res => res.json())
         .then(() => location.reload())
     })
-
-    
 })
+
+
 
 
 //Create - Insert new post
